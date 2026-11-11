@@ -5,14 +5,14 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="container">
+    <div className="app-wrapper">
       <div className="counter-display">
         <h1>Contador de Cliques</h1>
         <p>{count}</p>
       </div>
 
-      <div className="buttons">
-        <button onClick={() => setCount(count + 1)}></button>
+      <div className="increment-btns">
+        <button onClick={() => setCount(count + 1)}>+</button>
       </div>
     </div>
   );
