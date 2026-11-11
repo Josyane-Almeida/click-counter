@@ -1,13 +1,32 @@
 .app-wrapper {
+  --bg-color: #e7e7e7;
+  --text-color: #553333;
+  --title-color: #553333;
+  --counter-color: #efb5ca;
+  --btn-bg: #efb5ca;
+  --btn-hover: #efccd8;
+  --toggle-bg: #e7e7e7;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f5f9;
-  color: #1e293b;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-wrapper.dark-theme {
+  --bg-color: #262626;
+  --text-color: #f8fafc;
+  --title-color: #cbd5e1;
+  --counter-color: #efb5ca;
+  --btn-bg: #efb5ca;
+  --btn-hover: #efccd8;
+  --toggle-bg: #262626;
 }
 
 .counter-display {
@@ -18,13 +37,13 @@
 .counter-display h1 {
   font-size: 1.8rem;
   margin-bottom: 8px;
-  color: #553333;
+  color: var(--title-color);
 }
 
 .counter-display p {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #e9b9c9;
+  color: var(--counter-color);
   margin: 0;
 }
 
@@ -34,7 +53,7 @@
 }
 
 .increment-btns button {
-  background-color: #e9b9c9;
+  background-color: var(--btn-bg);
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -43,14 +62,32 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .increment-btns button:hover {
-  background-color: #efccd8;
+  background-color: var(--btn-hover);
 }
 
 .increment-btns button:active {
   transform: scale(0.95);
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--toggle-bg);
+  color: var(--toggle-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  opacity: 0.9;
 }
